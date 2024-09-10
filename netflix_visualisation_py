@@ -1,0 +1,22 @@
+# Krok 1: Załadowanie potrzebnych bibliotek
+from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Krok 2: Załadowanie pliku CSV z pulpitu
+uploaded = files.upload()
+
+# Krok 3: Policzenie liczby wystąpień dla każdego kraju w kolumnie 'country'
+country_counts = df['country'].value_counts()
+
+# Krok 4: Policzenie liczby wystąpień dla każdego kraju w kolumnie 'country'
+country_counts = df['country'].value_counts()
+
+# Wybranie 5 najczęściej występujących państw
+top_5_countries = country_counts.head(5)
+
+# Krok 4: Tworzenie wykresu kołowego dla 5 najczęściej występujących krajów
+plt.figure(figsize=(8, 8))  # ustawienie rozmiaru wykresu
+plt.pie(top_5_countries, labels=top_5_countries.index, autopct='%1.1f%%', startangle=140)
+plt.title('Top 5 krajów w danych')
+plt.show()
