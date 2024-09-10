@@ -20,3 +20,18 @@ plt.figure(figsize=(8, 8))  # ustawienie rozmiaru wykresu
 plt.pie(top_5_countries, labels=top_5_countries.index, autopct='%1.1f%%', startangle=140)
 plt.title('Top 5 krajów w danych')
 plt.show()
+
+# Krok 5 : Stworzenie wykresu drzewa (Treemap)
+import pandas as pd
+import matplotlib.pyplot as plt
+import squarify
+
+country_counts = df['country'].value_counts()
+
+top_5_countries = country_counts.head(5)
+
+plt.figure(figsize=(8, 8))  # ustawienie rozmiaru wykresu
+squarify.plot(sizes=top_5_countries, label=top_5_countries.index, alpha=0.8)
+plt.title('Treemap of Top 5 Countries in the Data')
+plt.axis('off')  # Wyłączenie osi
+plt.show()
