@@ -52,3 +52,5 @@ plt.xlabel('Miesiąc wydania')
 plt.ylabel('Liczba rekordów')
 plt.show()
 
+
+
